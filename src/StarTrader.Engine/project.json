@@ -1,0 +1,14 @@
+{
+    "version": "1.0.0-*",
+    "description": "Star Trader",
+    "compilationOptions": { "warningsAsErrors": true },
+    "dependencies": {
+    },
+    "frameworks": {
+        "dnx451": { },
+        "dnxcore50": {
+            "dependencies": {
+            }
+        }
+    }
+}
