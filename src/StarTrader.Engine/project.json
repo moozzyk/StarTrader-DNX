@@ -3,6 +3,8 @@
     "description": "Star Trader",
     "compilationOptions": { "warningsAsErrors": true },
     "dependencies": {
+        "EntityFramework": "7.0.0-beta4-12943",
+        "EntityFramework.Core": "7.0.0-beta4-12943"
     },
     "frameworks": {
         "dnx451": { },
