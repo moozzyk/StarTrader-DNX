@@ -1,6 +1,6 @@
 {
     "version": "1.0.0-*",
-    "description": "Star Trader",
+    "description": "Star Trader Engine",
     "compilationOptions": { "warningsAsErrors": true },
     "dependencies": {
         "EntityFramework": "7.0.0-beta4-12943",
