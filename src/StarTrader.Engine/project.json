@@ -3,8 +3,8 @@
     "description": "Star Trader Engine",
     "compilationOptions": { "warningsAsErrors": true },
     "dependencies": {
-        "EntityFramework": "7.0.0-beta4-12943",
-        "EntityFramework.Core": "7.0.0-beta4-12943"
+        "EntityFramework": "7.0.0-beta4-*",
+        "EntityFramework.Core": "7.0.0-beta4-*"
     },
     "frameworks": {
         "dnx451": { },
