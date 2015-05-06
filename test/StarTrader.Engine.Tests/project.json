@@ -4,7 +4,7 @@
         "EntityFramework": "7.0.0-beta4-12943",
         "EntityFramework.Core": "7.0.0-beta4-12943",
         "EntityFramework.InMemory": "7.0.0-beta4-12943",
-        "xunit.runner.aspnet": "2.0.0-aspnet-beta4-10266"
+        "xunit.runner.aspnet": "2.0.0-aspnet-beta4"
     },
     "dnx451": { },
     "dnxcore50": {
