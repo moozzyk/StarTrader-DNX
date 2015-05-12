@@ -26,5 +26,30 @@ namespace StarTrader.Engine
                 Assert.Equal(GameStatus.New, game.Status);
             }
         }
+
+        [Fact]
+        public void Can_add_player()
+        {
+            int gameId = -1;
+
+            using(var ctx = TestUtils.CreateContext())
+            {
+                var gameManager = new GameManager(ctx);
+                var game = gameManager.CreateGame(42, "Test game");
+                gameId = game.Id;
+                gameManager.AddPlayer(game.Id, 42, "Hegemon");
+            }
+
+            using(var ctx = TestUtils.CreateContext())
+            {
+                var gameManager = new GameManager(ctx);
+                var game = gameManager.GetGames().Single(g => g.Id == gameId);
+
+                var player = game.Players.SingleOrDefault();
+                Assert.NotNull(player);
+                Assert.Equal("Hegemon", player.Name);
+                Assert.Equal(42, player.OwnerId);
+            }
+        }
     }
 }

@@ -1,10 +1,11 @@
 {
     "dependencies": {
         "StarTrader.Engine": "1.0.0-*",
-        "EntityFramework": "7.0.0-beta4-12943",
-        "EntityFramework.Core": "7.0.0-beta4-12943",
-        "EntityFramework.InMemory": "7.0.0-beta4-12943",
-        "xunit.runner.aspnet": "2.0.0-aspnet-beta4"
+        "EntityFramework": "7.0.0-beta4",
+        "EntityFramework.Core": "7.0.0-beta4",
+        "EntityFramework.InMemory": "7.0.0-beta4",
+        "xunit": "2.1.0-*",
+        "xunit.runner.dnx": "2.1.0-*"
     },
     "dnx451": { },
     "dnxcore50": {
@@ -12,6 +13,6 @@
         }
     },
     "commands": {
-        "test": "xunit.runner.aspnet"
+        "test": "xunit.runner.dnx"
     }
 }

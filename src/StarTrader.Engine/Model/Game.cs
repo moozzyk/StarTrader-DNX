@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace StarTrader.Engine.Model
 {
@@ -9,5 +10,7 @@ namespace StarTrader.Engine.Model
         public DateTimeOffset Created { get; set; }
 		public string Name { get; set; }
 		public GameStatus Status { get; set; }
+		
+		public ICollection<Player> Players { get; set; }
 	}
 }

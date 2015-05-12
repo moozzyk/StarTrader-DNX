@@ -18,6 +18,13 @@ namespace StarTrader.Engine
 				entity.Property(e=>e.Id)
 					.ForSqlServer().UseIdentity();
 			});
+			
+			builder.Entity<Player>(entity => 
+			{
+				entity.Key(e => e.Id);
+				entity.Property(e => e.Id)
+					.ForSqlServer().UseIdentity();
+			});
 		}
 
 		public DbSet<Game> Games { get; set; }
