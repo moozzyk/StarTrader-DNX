@@ -1,7 +1,9 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.Data.Entity;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using StarTrader.Engine;
 
 namespace StarTrader
 {
@@ -10,6 +12,11 @@ namespace StarTrader
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<StarTraderContext>(options =>
+                    options.UseSqlServer(@"Server=(localdb)\v11.0;Database=StarTrader;integrated security=True;"));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

@@ -4,7 +4,8 @@
     "compilationOptions": { "warningsAsErrors": true },
     "dependencies": {
         "EntityFramework": "7.0.0-beta4",
-        "EntityFramework.Core": "7.0.0-beta4"
+        "EntityFramework.Core": "7.0.0-beta4",
+        "EntityFramework.Commands": "7.0.0-beta4"
     },
     "frameworks": {
         "dnx451": { },
@@ -12,5 +13,8 @@
             "dependencies": {
             }
         }
+    },
+    "commands": {
+        "ef" : "EntityFramework.Commands"
     }
 }
