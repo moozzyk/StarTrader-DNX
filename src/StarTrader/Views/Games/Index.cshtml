@@ -1,0 +1,45 @@
+@model StarTrader.Models.GamesModel
+@{
+    ViewBag.Title = "Games";
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@*@ViewBag.Message*@</h3>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date Created</th>
+                <th>Created by</th>
+                <th>Game Status</th>
+                <th>Players</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Model.Games)
+            {
+                <tr>
+					<td>@Html.DisplayFor(m => game.Name)</td>
+					<td>@Html.DisplayFor(m => game.Created)</td>
+					<td>@Html.DisplayFor(m => game.OwnerId)</td>
+					<td>@Html.DisplayFor(m => game.Status)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<div>
+<div>
+    <h4>Create a new game.</h4>
+    @using (Html.BeginForm("NewGame", "Games", FormMethod.Post, new {@class = "form-horizontal"}))
+    {
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.NewGameName, new Dictionary<string, object> {{"placeholder", "Enter game name"}})
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn" value="Create Game" />
+        </div>
+   }
+</div>

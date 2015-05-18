@@ -16,7 +16,7 @@ namespace StarTrader
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<StarTraderContext>(options =>
-                    options.UseSqlServer(@"Server=(localdb)\v11.0;Database=StarTrader;integrated security=True;"));
+                    options.UseSqlServer(@"Server=(localdb)\v11.0;Database=StarTrader;integrated security=True;MultipleActiveResultSets=True;"));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
