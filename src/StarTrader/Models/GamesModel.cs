@@ -4,23 +4,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StarTrader.Models
 {
-	public class GamesModel
-	{
-		private readonly IList<Game> _games;
+    public class GamesModel
+    {
+        private readonly IList<Game> _games;
 
-		public GamesModel()
-		{
-		}
+        public GamesModel()
+        {
+        }
 
-		public GamesModel(IList<Game> games)
-		{
-			_games = games;
-		}
+        public GamesModel(IList<Game> games)
+        {
+            _games = games;
+        }
 
-		public IEnumerable<Game> Games => _games;
+        public IEnumerable<Game> Games => _games;
 
-		[Required]
-		[MinLength(1)]
-		public string NewGameName { get; set; }
-	}
+        [Required]
+        [MinLength(1)]
+        public string NewGameName { get; set; }
+    }
 }
