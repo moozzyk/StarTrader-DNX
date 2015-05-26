@@ -1,4 +1,4 @@
-using StarTrader.Engine.Model;
+using StarTrader.Engine;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -9,8 +9,7 @@ namespace StarTrader.Models
         private readonly IList<Game> _games;
 
         public GamesModel()
-        {
-        }
+        { }
 
         public GamesModel(IList<Game> games)
         {

@@ -16,8 +16,8 @@ namespace StarTrader.Engine.Migrations
             {
                 var builder = new BasicModelBuilder()
                     .Annotation("SqlServer:ValueGeneration", "Sequence");
-
-                builder.Entity("StarTrader.Engine.Model.Game", b =>
+                
+                builder.Entity("StarTrader.Engine.Game", b =>
                     {
                         b.Property<DateTimeOffset>("Created")
                             .Annotation("OriginalValueIndex", 0);
@@ -31,10 +31,12 @@ namespace StarTrader.Engine.Migrations
                             .Annotation("OriginalValueIndex", 3);
                         b.Property<int>("Status")
                             .Annotation("OriginalValueIndex", 4);
+                        b.Property<int>("Turn")
+                            .Annotation("OriginalValueIndex", 5);
                         b.Key("Id");
                     });
-
-                builder.Entity("StarTrader.Engine.Model.Player", b =>
+                
+                builder.Entity("StarTrader.Engine.Player", b =>
                     {
                         b.Property<int?>("GameId")
                             .Annotation("OriginalValueIndex", 0)
@@ -49,12 +51,52 @@ namespace StarTrader.Engine.Migrations
                             .Annotation("OriginalValueIndex", 3);
                         b.Key("Id");
                     });
-
-                builder.Entity("StarTrader.Engine.Model.Player", b =>
+                
+                builder.Entity("StarTrader.Engine.StarSystem", b =>
                     {
-                        b.ForeignKey("StarTrader.Engine.Model.Game", "GameId");
+                        b.Property<bool>("HasSafeBerth")
+                            .Annotation("OriginalValueIndex", 0);
+                        b.Property<bool>("HasShipyard")
+                            .Annotation("OriginalValueIndex", 1);
+                        b.Property<int>("Id")
+                            .GenerateValueOnAdd()
+                            .Annotation("OriginalValueIndex", 2)
+                            .Annotation("SqlServer:ValueGeneration", "Identity");
+                        b.Property<int>("LawLevel")
+                            .Annotation("OriginalValueIndex", 3);
+                        b.Property<string>("Name")
+                            .Annotation("OriginalValueIndex", 4);
+                        b.Property<int>("PatrolRating")
+                            .Annotation("OriginalValueIndex", 5);
+                        b.Property<int>("SecurityRating")
+                            .Annotation("OriginalValueIndex", 6);
+                        b.Property<int>("SpacePortClass")
+                            .Annotation("OriginalValueIndex", 7);
+                        b.Property<int?>("UniverseId")
+                            .Annotation("OriginalValueIndex", 8)
+                            .Annotation("ShadowIndex", 0);
+                        b.Key("Id");
                     });
-
+                
+                builder.Entity("StarTrader.Engine.Universe", b =>
+                    {
+                        b.Property<int>("Id")
+                            .GenerateValueOnAdd()
+                            .Annotation("OriginalValueIndex", 0)
+                            .Annotation("SqlServer:ValueGeneration", "Identity");
+                        b.Key("Id");
+                    });
+                
+                builder.Entity("StarTrader.Engine.Player", b =>
+                    {
+                        b.ForeignKey("StarTrader.Engine.Game", "GameId");
+                    });
+                
+                builder.Entity("StarTrader.Engine.StarSystem", b =>
+                    {
+                        b.ForeignKey("StarTrader.Engine.Universe", "UniverseId");
+                    });
+                
                 return builder.Model;
             }
         }

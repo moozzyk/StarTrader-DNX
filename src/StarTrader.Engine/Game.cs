@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace StarTrader.Engine.Model
+namespace StarTrader.Engine
 {
     public class Game
     {
@@ -10,7 +10,7 @@ namespace StarTrader.Engine.Model
         public DateTimeOffset Created { get; set; }
         public string Name { get; set; }
         public GameStatus Status { get; set; }
-        
+        public int Turn {get; private set; } = -1;
         public ICollection<Player> Players { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 using Xunit;
 using System.Linq;
-using StarTrader.Engine.Model;
 
 namespace StarTrader.Engine
 {

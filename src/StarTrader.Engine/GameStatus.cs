@@ -1,4 +1,4 @@
-namespace StarTrader.Engine.Model
+namespace StarTrader.Engine
 {
     public enum GameStatus
     {

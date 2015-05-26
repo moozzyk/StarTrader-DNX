@@ -1,7 +1,6 @@
 using Microsoft.AspNet.Mvc;
 using StarTrader.Models;
 using StarTrader.Engine;
-using StarTrader.Engine.Model;
 using System.Collections.Generic;
 using System.Linq;
 

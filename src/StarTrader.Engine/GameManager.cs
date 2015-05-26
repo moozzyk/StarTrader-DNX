@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using StarTrader.Engine.Model;
 using System.Collections.Generic;
 
 namespace StarTrader.Engine

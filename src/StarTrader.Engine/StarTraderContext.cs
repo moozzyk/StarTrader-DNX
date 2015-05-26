@@ -1,6 +1,5 @@
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
-using StarTrader.Engine.Model;
 
 namespace StarTrader.Engine
 {
@@ -31,8 +30,22 @@ namespace StarTrader.Engine
                 entity.Property(e=>e.Id)
                     .ForSqlServer().UseIdentity();
             });
-            
-            builder.Entity<Player>(entity => 
+
+            builder.Entity<Player>(entity =>
+            {
+                entity.Key(e => e.Id);
+                entity.Property(e => e.Id)
+                    .ForSqlServer().UseIdentity();
+            });
+
+            builder.Entity<Universe>(entity=>
+            {
+                entity.Key(e => e.Id);
+                entity.Property(e => e.Id)
+                    .ForSqlServer().UseIdentity();
+            });
+
+            builder.Entity<StarSystem>(entity=>
             {
                 entity.Key(e => e.Id);
                 entity.Property(e => e.Id)
