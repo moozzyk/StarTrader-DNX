@@ -5,14 +5,12 @@
     "compilationOptions": { "warningsAsErrors": true },
     "dependencies": {
         "StarTrader.Engine": "1.0.0-*",
-        "Microsoft.AspNet.Mvc": "6.0.0-beta4",
-        "Microsoft.AspNet.Diagnostics": "1.0.0-beta4",
-        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4",
-        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta4",
-        "Microsoft.Framework.Logging": "1.0.0-beta4",
-        "Microsoft.Framework.Logging.Console": "1.0.0-beta4",
-        "EntityFramework": "7.0.0-beta4",
-        "EntityFramework.Core": "7.0.0-beta4"
+        "Microsoft.AspNet.Mvc": "6.0.0-beta5",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-beta5",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
+        "Microsoft.Framework.Logging": "1.0.0-beta5",
+        "Microsoft.Framework.Logging.Console": "1.0.0-beta5",
+        "EntityFramework.Core": "7.0.0-beta5"
     },
     "frameworks": {
         "dnx451": { },

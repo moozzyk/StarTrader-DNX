@@ -9,12 +9,12 @@ namespace StarTrader.Engine
         public StarTraderContext()
         {}
 
-        public StarTraderContext(DbContextOptions options)
+        public StarTraderContext(EntityOptions options)
             : base(options)
         { }
 
         // TODO: Remove - used for migrations only but should not be needed
-        protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        protected override void OnConfiguring(EntityOptionsBuilder builder)
         {
             if(!builder.IsConfigured)
             {
