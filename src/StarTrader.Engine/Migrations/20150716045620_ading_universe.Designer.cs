@@ -7,9 +7,19 @@ using StarTrader.Engine;
 namespace StarTrader.Engine.Migrations
 {
     [ContextType(typeof(StarTraderContext))]
-    partial class StarTraderContextModelSnapshot : ModelSnapshot
+    partial class ading_universe
     {
-        public override void BuildModel(ModelBuilder builder)
+        public override string Id
+        {
+            get { return "20150716045620_ading_universe"; }
+        }
+        
+        public override string ProductVersion
+        {
+            get { return "7.0.0-beta5-13549"; }
+        }
+        
+        public override void BuildTargetModel(ModelBuilder builder)
         {
             builder
                 .Annotation("SqlServer:DefaultSequenceName", "DefaultSequence")

@@ -10,7 +10,8 @@ namespace StarTrader.Engine
         public DateTimeOffset Created { get; set; }
         public string Name { get; set; }
         public GameStatus Status { get; set; }
-        public int Turn {get; private set; } = -1;
+        public int Turn {get; set; } = -1;
         public ICollection<Player> Players { get; set; }
+        public Universe Universe {get; set;}
     }
 }
