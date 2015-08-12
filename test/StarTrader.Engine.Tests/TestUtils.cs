@@ -6,8 +6,8 @@ namespace StarTrader.Engine
     {
         public static StarTraderContext CreateContext()
         {
-            var optionsBuilder = new EntityOptionsBuilder();
-            optionsBuilder.UseInMemoryStore(persist: true);
+            var optionsBuilder = new DbContextOptionsBuilder();
+            optionsBuilder.UseInMemoryDatabase(persist: true);
 
             return new StarTraderContext(optionsBuilder.Options);
         }

@@ -9,12 +9,12 @@ namespace StarTrader.Engine
         public StarTraderContext()
         {}
 
-        public StarTraderContext(EntityOptions options)
+        public StarTraderContext(DbContextOptions options)
             : base(options)
         { }
 
         // TODO: Remove - used for migrations only but should not be needed
-        protected override void OnConfiguring(EntityOptionsBuilder builder)
+        protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             if(!builder.IsConfigured)
             {
@@ -28,28 +28,28 @@ namespace StarTrader.Engine
             {
                 entity.Key(e => e.Id);
                 entity.Property(e=>e.Id)
-                    .ForSqlServer().UseIdentity();
+                    .UseSqlServerIdentityColumn();
             });
 
             builder.Entity<Player>(entity =>
             {
                 entity.Key(e => e.Id);
                 entity.Property(e => e.Id)
-                    .ForSqlServer().UseIdentity();
+                    .UseSqlServerIdentityColumn();
             });
 
             builder.Entity<Universe>(entity=>
             {
                 entity.Key(e => e.Id);
                 entity.Property(e => e.Id)
-                    .ForSqlServer().UseIdentity();
+                    .UseSqlServerIdentityColumn();
             });
 
             builder.Entity<StarSystem>(entity=>
             {
                 entity.Key(e => e.Id);
                 entity.Property(e => e.Id)
-                    .ForSqlServer().UseIdentity();
+                    .UseSqlServerIdentityColumn();
             });
         }
 
